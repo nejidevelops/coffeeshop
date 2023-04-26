@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:coffeeshop/util/coffee_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -70,8 +71,18 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        // Horizontal listview of coffee tiles
 
+        SizedBox(height: 25),
+
+        // Horizontal listview of coffee tiles
+        Expanded(
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              CoffeeTile(),
+            ],
+          ),
+        ),
       ]),
     );
   }
