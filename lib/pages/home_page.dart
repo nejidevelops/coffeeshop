@@ -34,13 +34,13 @@ class _HomePageState extends State<HomePage> {
 
   // user tapped on coffee types
   void coffeeTypeSelected(int index) {
-    setState((){
-      for (int i = 0; i < coffeeType.length; i++){
-        coffeeType[index][1] = false;
-      }
-      coffeeType[index][1] = true;
-    });
-  }
+  setState(() {
+    for (int i = 0; i < coffeeType.length; i++) {
+      coffeeType[i][1] = false;
+    }
+    coffeeType[index][1] = true;
+  });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -129,7 +129,21 @@ class _HomePageState extends State<HomePage> {
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              CoffeeTile(),
+              CoffeeTile(
+                coffeeImagePath: 'lib/images/pexels-andrew-peterson-350478.jpg',
+                coffeeName: 'Cappucino',
+                coffeePrice: '4.99',
+              ),
+              CoffeeTile(
+                coffeeImagePath: 'lib/images/pexels-mwabonje-1694874.jpg',
+                coffeeName: 'Latte',
+                coffeePrice: '4.20',
+              ),
+              CoffeeTile(
+                coffeeImagePath: 'lib/images/pexels-tirachard-kumtanom-544113.jpg',
+                coffeeName: 'Black',
+                coffeePrice: '3.57',
+              ),
             ],
           ),
         ),
